@@ -2,38 +2,31 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, TouchableHighlight, Image, Alert } from 'react-native';
 
 /* import Settings */
-import {API_URL} from '../settings';
+import { API_URL } from '../settings';
 
 export default class LoginView extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			email: '',
+			userName: '',
 			password: ''
 		};
 	}
 
-
-
-  
-
 	onClickListener = async (viewId) => {
-		configOptions = {
+		var data = {
+			userName: this.state.userName,
+			password: this.state.password
+		};
+		var configOptions = {
 			method: 'POST',
-			body: {
-				email: 'cjw',
-				password: 'c'
-			},
-			'content-Type': 'application/json'
+			body: JSON.stringify(data),
+			headers: new Headers('Content-Type', 'application/json')
 		};
 		if (viewId === 'login') {
-			fetch(`${API_URL}api/login`)
-				.then((data) => {
-					console.log(data);
-				})
-				.catch((err) => {
-					console.log(err);
-				});
+			fetch(`${API_URL}/api/login`, configOptions).then((res) => console.log(res)).catch((err) => {
+				console.log(err);
+			});
 			this.props.navigation.navigate('profile');
 			console.log('login');
 		} else {
