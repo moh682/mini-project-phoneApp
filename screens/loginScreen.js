@@ -8,26 +8,27 @@ export default class LoginView extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			userName: '',
-			password: ''
+			userName: 'cjw',
+			password: 'c'
 		};
 	}
 
 	onClickListener = async (viewId) => {
-		var data = {
-			userName: this.state.userName,
-			password: this.state.password
-		};
-		var configOptions = {
-			method: 'POST',
-			body: JSON.stringify(data),
-			headers: new Headers('Content-Type', 'application/json')
-		};
 		if (viewId === 'login') {
-			fetch(`${API_URL}/api/login`, configOptions).then((res) => console.log(res)).catch((err) => {
-				console.log(err);
-			});
-			this.props.navigation.navigate('profile');
+			var data = {
+				username: this.state.userName,
+				password: this.state.password
+			};
+			// console.log(JSON.stringify(data));
+			// var configOptions = {
+			// 	method: 'POST',
+			// 	body: JSON.stringify(data),
+			// 	headers: new Headers({ 'Content-Type': 'application/json' })
+			// };
+			// await fetch(`${API_URL}/api/login`, configOptions).then((res) => console.log(res)).catch((err) => {
+			// 	console.log(err);
+			// });
+			this.props.navigation.navigate('profile', data);
 			console.log('login');
 		} else {
 			Alert.alert('Alert', 'Button pressed ' + viewId);

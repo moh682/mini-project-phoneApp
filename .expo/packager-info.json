@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 18600,
-  "expoServerNgrokUrl": "https://nb-k5k.moh-682.mini-project-phoneapp.exp.direct",
-  "packagerNgrokUrl": "https://packager.nb-k5k.moh-682.mini-project-phoneapp.exp.direct",
-  "ngrokPid": 18614
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
