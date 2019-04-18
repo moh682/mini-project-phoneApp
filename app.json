@@ -1,7 +1,10 @@
 {
   "displayName": "mini-project-phoneApp",
   "name": "emptyprojecttemplate",
-    "expo": {
-    "sdkVersion": "32.0.0"
+  "expo": {
+    "sdkVersion": "32.0.0",
+    "name": "Js-Fullstack-NativeApp",
+    "slug": "js-fullstack-nativeapp",
+    "description": ""
   }
 }
